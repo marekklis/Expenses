@@ -1,0 +1,19 @@
+# Users schema
+
+# --- !Ups
+
+CREATE TABLE EXPENSES (
+    ID bigint(20) NOT NULL AUTO_INCREMENT,
+    NAME varchar(255) NOT NULL,
+    PRICE double NOT NULL,
+    WHEN date NOT NULL,
+    PRIMARY KEY (ID)
+);
+
+INSERT INTO EXPENSES (NAME, PRICE) VALUES ('jeden from db', 1.23);
+INSERT INTO EXPENSES (NAME, PRICE) VALUES ('dwa from Expenses', 3.45);
+INSERT INTO EXPENSES (NAME, PRICE) VALUES ('trzy...', 34.345);
+
+# --- !Downs
+
+DROP TABLE EXPENSES;

@@ -1,0 +1,18 @@
+@(expenses: List[models.Expense], sum: Double)
+@main(title = "Expenses") {
+
+<h1>List of expenses</h1>
+<a href="@action(controllers.Application.addExpense)">Add new expense</a>
+
+<table>
+    <tr><td>id</td><td>name</td><td>price</td><td>when</td></tr>
+    @expenses.map { expense =>
+    <tr><td> <a href="@action(controllers.Application.editExpense(expense.id))">@expense.id</a> </td>
+        <td> @expense.name </td>
+        <td> @expense.price</td>
+        <td> @expense.date</td>
+    </tr>
+    }
+</table>
+Sum of prices: <b>@sum</b>
+}

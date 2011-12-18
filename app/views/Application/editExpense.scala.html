@@ -1,0 +1,27 @@
+@(expense: models.Expense, title: String)
+@main(title) {
+
+<h1>@title</h1>
+
+<form action="@action(controllers.Application.saveExpense)" method="POST">
+    <input type="hidden" name="id" value="@expense.id"/>
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="name" value="@expense.name"/></td>
+        </tr>
+        <tr>
+            <td>Price:</td>
+            <td><input type="text" name="price" value="@expense.price"/></td>
+        </tr>
+        <tr>
+            <td>When:</td>
+            <td><input type="text" name="date" value="@expense.date"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Save"/></td>
+        </tr>
+    </table>
+</form>
+
+}
